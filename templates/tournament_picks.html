@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{%block body%}
+  <div class="starter-template">
+    <h1>{{tournament.name}}</h1>
+  </div>
+  {% for user in users %}
+  <div>
+    <h4>{{user.username}}</h4>
+    {% for pick in user.picks %}
+      {%if pick.tournament == tournament%}
+        <div>{{pick.player.first_name}} {{pick.player.last_name}}</div>
+        <form id="delete_form" method="post" action="pick/delete">
+          <input type="hidden" name="pid" value="{{pick.id}}" />
+          <input type="submit" value="delete">
+        </form>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <form method="post">
+    <select name="user_id">
+      {% for user in users %}
+      <option value="{{user.id}}">{{user.username}}</option>
+      {% endfor %}
+    </select></br>
+    <select name="player_id">
+      {% for player in tournament.field %}
+      <option value="{{player.id}}">{{player.first_name}} {{player.last_name}}</option>
+      {% endfor %}
+    </select></br>
+    <input type="submit" value="Submit"/>
+  </form>
+
+{% endblock %}

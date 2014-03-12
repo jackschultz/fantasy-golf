@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{%block body%}
+  <div class="starter-template">
+    <h1>{{tournament.name}}</h1>
+  </div>
+  {%if tournament.field %}
+      <h3>A players</h3>
+    {% for player in tournament.field %}
+      {% if player.group == 'A' %}
+      <div>{{player.first_name}} {{player.last_name}}</div>
+      {% endif %}
+    {% endfor %}
+      <h3>B players</h3>
+    {% for player in tournament.field %}
+      {% if player.group == 'B' %}
+      <div>{{player.first_name}} {{player.last_name}}</div>
+      {% endif %}
+    {% endfor %}
+      <h3>C players</h3>
+    {% for player in tournament.field %}
+      {% if player.group == 'C' %}
+      <div>{{player.first_name}} {{player.last_name}}</div>
+      {% endif %}
+    {% endfor %}
+      <h3>D players</h3>
+    {% for player in tournament.field %}
+      {% if player.group == 'D' %}
+      <div>{{player.first_name}} {{player.last_name}}</div>
+      {% endif %}
+    {% endfor %}
+      <h3>N players</h3>
+    {% for player in tournament.field %}
+      {% if player.group == 'N' %}
+      <div>{{player.first_name}} {{player.last_name}}</div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <div>Field not yet released</div>
+  {% endif %}
+
+{% endblock %}
+

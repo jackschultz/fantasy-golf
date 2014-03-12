@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{%block body%}
+  <div class="starter-template">
+    <h1>List of Tournaments</h1>
+  </div>
+  {% for tournament in tournaments %}
+  <div><a href="/tournaments/{{tournament.id}}">{{tournament}}</a></div>
+  {% endfor %}
+{% endblock %}
+
