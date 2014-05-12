@@ -9,13 +9,17 @@ me.connect('fg')
 #tourney = Tournament.objects.get(name="Farmers Insurance Open")
 #tourney = Tournament.objects.get(name="Northern Trust Open")
 #tourney = Tournament.objects.get(name="The Honda Classic")
-#tourney = Tournament.objects.get(name="World Golf Championships-Cadillac Championship")
-tourney = Tournament.objects.get(name="Valspar Championship")
+tourney = Tournament.objects.get(name="Valero Texas Open")
+tourney = Tournament.objects.get(name="Shell Houston Open")
+tourney = Tournament.objects.get(name="Zurich Classic of New Orleans")
+tourney = Tournament.objects.get(name="THE PLAYERS Championship")
+tourney = Tournament.objects.get(name="HP Byron Nelson Championship")
 
 
 #url = 'http://www.pgatour.com/tournaments/humana-challenge-in-partnership-with-the-clinton-foundation/field.html'
-url = 'http://www.pgatour.com/tournaments//field.html'
-url = 'http://www.pgatour.com/tournaments/valspar-championship/field.html'
+url = 'http://www.pgatour.com/tournaments/the-players-championship/field.html'
+url = 'http://www.pgatour.com/tournaments/hp-byron-nelson-championship/field.html'
+
 tourney.field_url = url
 tourney.save()
 #tourney.field = []
